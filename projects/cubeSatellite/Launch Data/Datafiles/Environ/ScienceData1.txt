@@ -1,0 +1,1 @@
+time,accelz,accely,accelx,gyroz,gyroy,gyrox,compassz,compassy,compassx,temp,pressure,humidity

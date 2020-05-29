@@ -1,0 +1,120 @@
+==11403== Memcheck, a memory error detector
+==11403== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11403== Using Valgrind-3.14.0-353a3587bb-20181007X and LibVEX; rerun with -h for copyright info
+==11403== Command: ./kwoc3 in04.txt -e english.txt
+==11403== Parent PID: 10055
+==11403== 
+--11403-- 
+--11403-- Valgrind options:
+--11403--    --leak-check=full
+--11403--    --show-leak-kinds=all
+--11403--    --track-origins=yes
+--11403--    --verbose
+--11403--    --log-file=valgrind-out.txt
+--11403-- Contents of /proc/version:
+--11403--   Linux version 3.10.0-1062.12.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ) #1 SMP Tue Feb 4 23:02:59 UTC 2020
+--11403-- 
+--11403-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--11403-- Page sizes: currently 4096, max supported 4096
+--11403-- Valgrind library directory: /usr/lib64/valgrind
+--11403-- Reading syms from /home/rebeccamarshall/Desktop/seng265/rebeccamarshall/a3/kwoc3
+--11403-- Reading syms from /usr/lib64/ld-2.17.so
+--11403-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--11403--    object doesn't have a symbol table
+--11403--    object doesn't have a dynamic symbol table
+--11403-- Scheduler: using generic scheduler lock implementation.
+--11403-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==11403== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11403-by-rebeccamarshall-on-ugls5.ece.uvic.ca
+==11403== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11403-by-rebeccamarshall-on-ugls5.ece.uvic.ca
+==11403== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11403-by-rebeccamarshall-on-ugls5.ece.uvic.ca
+==11403== 
+==11403== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11403== don't want to do, unless you know exactly what you're doing,
+==11403== or are doing some strange experiment):
+==11403==   /usr/lib64/valgrind/../../bin/vgdb --pid=11403 ...command...
+==11403== 
+==11403== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11403==   /path/to/gdb ./kwoc3
+==11403== and then give GDB the following command
+==11403==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=11403
+==11403== --pid is optional if only one valgrind process is running
+==11403== 
+--11403-- REDIR: 0x4019df0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c66c5 (???)
+--11403-- REDIR: 0x4019bc0 (ld-linux-x86-64.so.2:index) redirected to 0x580c66df (???)
+--11403-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--11403-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+==11403== WARNING: new redirection conflicts with existing -- ignoring it
+--11403--     old: 0x04019df0 (strlen              ) R-> (0000.0) 0x580c66c5 ???
+--11403--     new: 0x04019df0 (strlen              ) R-> (2007.0) 0x04c2d0e0 strlen
+--11403-- REDIR: 0x4019d70 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2e230 (strcmp)
+--11403-- REDIR: 0x401aa30 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31de0 (mempcpy)
+--11403-- Reading syms from /usr/lib64/libc-2.17.so
+--11403-- REDIR: 0x4ec70e0 (libc.so.6:strcasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4ec3e60 (libc.so.6:strnlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4ec93b0 (libc.so.6:strncasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4ec68c0 (libc.so.6:memset) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4ec6870 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4ec5850 (libc.so.6:__GI_strrchr) redirected to 0x4c2caa0 (__GI_strrchr)
+--11403-- REDIR: 0x4ec22e0 (libc.so.6:strcmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4f75d40 (libc.so.6:__strcmp_sse42) redirected to 0x4c2e1e0 (__strcmp_sse42)
+--11403-- REDIR: 0x4ebca90 (libc.so.6:malloc) redirected to 0x4c29e1c (malloc)
+--11403-- REDIR: 0x4edc8d0 (libc.so.6:__GI_strstr) redirected to 0x4c32070 (__strstr_sse2)
+--11403-- REDIR: 0x4ec5f50 (libc.so.6:memchr) redirected to 0x4c2e2d0 (memchr)
+--11403-- REDIR: 0x4ecbaf0 (libc.so.6:__GI_memcpy) redirected to 0x4c2eee0 (__GI_memcpy)
+--11403-- REDIR: 0x4ec3d30 (libc.so.6:strlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4fa6630 (libc.so.6:__strlen_sse2_pminub) redirected to 0x4c2d020 (strlen)
+--11403-- REDIR: 0x4ec57d0 (libc.so.6:strncpy) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--11403-- REDIR: 0x4ed1cc0 (libc.so.6:__strncpy_sse2_unaligned) redirected to 0x4c2d6b0 (__strncpy_sse2_unaligned)
+--11403-- REDIR: 0x4ebceb0 (libc.so.6:free) redirected to 0x4c2af16 (free)
+==11403== Source and destination overlap in strncpy(0x5208776, 0x5208776, 40)
+==11403==    at 0x4C2D773: __strncpy_sse2_unaligned (vg_replace_strmem.c:555)
+==11403==    by 0x401055: sort (kwoc3.c:195)
+==11403==    by 0x40147C: main (kwoc3.c:299)
+==11403== 
+--11403-- REDIR: 0x4ecd370 (libc.so.6:strchrnul) redirected to 0x4c31900 (strchrnul)
+--11403-- REDIR: 0x4ec6a90 (libc.so.6:__GI_mempcpy) redirected to 0x4c31b10 (__GI_mempcpy)
+==11403== 
+==11403== HEAP SUMMARY:
+==11403==     in use at exit: 2,688 bytes in 24 blocks
+==11403==   total heap usage: 91 allocs, 67 frees, 10,924 bytes allocated
+==11403== 
+==11403== Searching for pointers to 24 not-freed blocks
+==11403== Checked 69,728 bytes
+==11403== 
+==11403== 1,008 bytes in 9 blocks are indirectly lost in loss record 1 of 3
+==11403==    at 0x4C29EA3: malloc (vg_replace_malloc.c:309)
+==11403==    by 0x40177B: emalloc (emalloc.c:8)
+==11403==    by 0x401644: new_node (listy.c:19)
+==11403==    by 0x400DB7: remove_duplicates (kwoc3.c:127)
+==11403==    by 0x401423: main (kwoc3.c:293)
+==11403== 
+==11403== 1,568 bytes in 14 blocks are indirectly lost in loss record 2 of 3
+==11403==    at 0x4C29EA3: malloc (vg_replace_malloc.c:309)
+==11403==    by 0x40177B: emalloc (emalloc.c:8)
+==11403==    by 0x401644: new_node (listy.c:19)
+==11403==    by 0x400CB3: store_words (kwoc3.c:104)
+==11403==    by 0x4013FC: main (kwoc3.c:291)
+==11403== 
+==11403== 2,688 (112 direct, 2,576 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+==11403==    at 0x4C29EA3: malloc (vg_replace_malloc.c:309)
+==11403==    by 0x40177B: emalloc (emalloc.c:8)
+==11403==    by 0x401644: new_node (listy.c:19)
+==11403==    by 0x400CB3: store_words (kwoc3.c:104)
+==11403==    by 0x4013FC: main (kwoc3.c:291)
+==11403== 
+==11403== LEAK SUMMARY:
+==11403==    definitely lost: 112 bytes in 1 blocks
+==11403==    indirectly lost: 2,576 bytes in 23 blocks
+==11403==      possibly lost: 0 bytes in 0 blocks
+==11403==    still reachable: 0 bytes in 0 blocks
+==11403==         suppressed: 0 bytes in 0 blocks
+==11403== 
+==11403== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==11403== 
+==11403== 1 errors in context 1 of 2:
+==11403== Source and destination overlap in strncpy(0x5208776, 0x5208776, 40)
+==11403==    at 0x4C2D773: __strncpy_sse2_unaligned (vg_replace_strmem.c:555)
+==11403==    by 0x401055: sort (kwoc3.c:195)
+==11403==    by 0x40147C: main (kwoc3.c:299)
+==11403== 
+==11403== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
